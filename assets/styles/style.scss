@@ -1,0 +1,147 @@
+@import './variable';
+
+* {
+    font-family: 'Outfit', sans-serif;
+    color: $soft-blue;
+}
+
+body {
+    margin: 0;
+}
+
+main {
+    background-color: hsl(217, 54%, 11%);
+}
+
+p {
+    font-size: 18px;
+}
+
+.nft {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    min-height: 100vh;
+
+    &__info {
+        padding-top: 20px;
+    }
+
+    &__card {
+        background-color: hsl(216, 50%, 16%);
+        width: 335px;
+        padding: 20px;
+        border-radius: 15px;
+    }
+
+    &__title {
+        margin: 20px 0;
+        color: $white;
+        font-size: 20px;
+        font-weight: 600;
+        text-decoration: none;
+
+        &:hover {
+            color: $cyan;
+        }
+    }
+
+    &__desc {
+        font-weight: 300;
+    }
+
+    &__image {
+        position: relative;
+
+        img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        
+        &:hover {
+            cursor: pointer;
+
+            &::before {
+                content: '';
+                position: absolute;
+                border-radius: 10px;
+                width: 100%;
+                height: 100%;
+                background-color: $cyan;
+                opacity: 0.6;
+            }
+
+            &::after {
+                content: url('../images/icon-view.svg');
+                position: absolute;
+                transform: translate(-50%, -50%);
+                top: 50%;
+                left: 50%;
+            }
+        }
+    }
+
+    &__divider {
+        border-top: 0;
+        border-width: .5px;
+        border-color: hsl(215, 32%, 27%);
+        margin: 20px 0;
+    }
+
+    &__detail {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__detail-text {
+        display: flex;
+        align-items: center;
+
+        img {
+            display: inline-block;
+        }
+
+        p {
+            display: inline-block;
+            font-weight: 400;
+            margin: 0;
+            margin-left: 5px;
+        }
+
+        &--price {
+            @extend .nft__detail-text;
+
+            p {
+                font-weight: 600;
+                color: $cyan;
+            }
+        }
+    }
+
+    &__creator {
+        display: flex;
+        align-items: center;
+
+        img {
+            display: inline-block;
+            width: 35px;
+            border: 2px solid $white;
+            border-radius: 100%;
+        }
+
+        p {
+            display: inline-block;
+            margin: 0 15px;
+            
+            a {
+                color: $white;
+                text-decoration: none;
+
+                &:hover {
+                    color: $cyan;
+                }
+            }
+        }
+    }
+}
