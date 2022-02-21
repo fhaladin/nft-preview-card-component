@@ -24,10 +24,6 @@ p {
     padding: 0 20px;
     min-height: 100vh;
 
-    &__info {
-        padding-top: 20px;
-    }
-
     &__card {
         background-color: hsl(216, 50%, 16%);
         width: 335px;
@@ -36,11 +32,11 @@ p {
     }
 
     &__title {
-        margin: 20px 0;
+        cursor: pointer;
+        margin-top: 20px;
         color: $white;
         font-size: 20px;
         font-weight: 600;
-        text-decoration: none;
 
         &:hover {
             color: $cyan;
